@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest EPOS Connect installer package for macOS and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>se.svenskaspel.autopkg.munki.EPOSConnect</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>EPOSConnect</string>
+		<key>MUNKI_CATALOG</key>
+		<string>testing</string>
+		<key>MUNKI_CATEGORY</key>
+		<string>Verktyg</string>
+		<key>MUNKI_DEVELOPER</key>
+		<string>EPOS</string>
+		<key>MUNKI_DESCRIPTION</key>
+		<string>EPOS Connect håller EPOS-headset och högtalartelefoner uppdaterade samt ger användaren tillgång till enhetsinställningar och samtalskontroll.</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/EPOSConnect</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.7.6</string>
+	<key>ParentRecipe</key>
+	<string>se.svenskaspel.autopkg.download.EPOSConnect</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+				<key>pkginfo</key>
+				<dict>
+					<key>blocking_applications</key>
+					<array>
+						<string>EPOS Connect.app</string>
+					</array>
+					<key>catalogs</key>
+					<array>
+						<string>%MUNKI_CATALOG%</string>
+					</array>
+					<key>category</key>
+					<string>%MUNKI_CATEGORY%</string>
+					<key>description</key>
+					<string>%MUNKI_DESCRIPTION%</string>
+					<key>developer</key>
+					<string>%MUNKI_DEVELOPER%</string>
+					<key>display_name</key>
+					<string>EPOS Connect</string>
+					<key>name</key>
+					<string>%NAME%</string>
+					<key>unattended_install</key>
+					<true/>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
