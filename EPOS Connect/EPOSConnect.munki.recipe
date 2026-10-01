@@ -3,63 +3,57 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the latest EPOS Connect installer package for macOS and imports it into Munki.</string>
+	<string>Downloads the current release of EPOS Connect and imports into Munki.</string>
 	<key>Identifier</key>
-	<string>se.svenskaspel.autopkg.munki.EPOSConnect</string>
+	<string>com.github.JOSC-svs.munki.EPOSConnect</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>EPOSConnect</string>
-		<key>MUNKI_CATALOG</key>
-		<string>testing</string>
-		<key>MUNKI_CATEGORY</key>
-		<string>Verktyg</string>
-		<key>MUNKI_DEVELOPER</key>
-		<string>EPOS</string>
-		<key>MUNKI_DESCRIPTION</key>
-		<string>EPOS Connect håller EPOS-headset och högtalartelefoner uppdaterade samt ger användaren tillgång till enhetsinställningar och samtalskontroll.</string>
+		<string>EPOS Connect</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/EPOSConnect</string>
+		<string>apps/EPOS Connect</string>
+		<key>MUNKI_CATEGORY</key>
+		<string>Utilities</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>blocking_applications</key>
+			<array>
+				<string>EPOS Connect.app</string>
+			</array>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>%MUNKI_CATEGORY%</string>
+			<key>description</key>
+			<string>Keeps EPOS headsets and speakerphones updated and provides access to device settings and call control.</string>
+			<key>developer</key>
+			<string>EPOS</string>
+			<key>display_name</key>
+			<string>EPOS Connect</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>2.7.6</string>
+	<string>2.4.1</string>
 	<key>ParentRecipe</key>
-	<string>se.svenskaspel.autopkg.download.EPOSConnect</string>
+	<string>com.github.JOSC-svs.download.EPOSConnect</string>
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Processor</key>
-			<string>MunkiImporter</string>
 			<key>Arguments</key>
 			<dict>
 				<key>pkg_path</key>
 				<string>%pathname%</string>
 				<key>repo_subdirectory</key>
 				<string>%MUNKI_REPO_SUBDIR%</string>
-				<key>pkginfo</key>
-				<dict>
-					<key>blocking_applications</key>
-					<array>
-						<string>EPOS Connect.app</string>
-					</array>
-					<key>catalogs</key>
-					<array>
-						<string>%MUNKI_CATALOG%</string>
-					</array>
-					<key>category</key>
-					<string>%MUNKI_CATEGORY%</string>
-					<key>description</key>
-					<string>%MUNKI_DESCRIPTION%</string>
-					<key>developer</key>
-					<string>%MUNKI_DEVELOPER%</string>
-					<key>display_name</key>
-					<string>EPOS Connect</string>
-					<key>name</key>
-					<string>%NAME%</string>
-					<key>unattended_install</key>
-					<true/>
-				</dict>
 			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
 		</dict>
 	</array>
 </dict>
