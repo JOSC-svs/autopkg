@@ -3,23 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release of EPOS Connect and imports into Munki.</string>
+	<string>Downloads the current release of DisplayLink Manager and imports into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.JOSC-svs.munki.EPOSConnect</string>
+	<string>com.github.JOSC-svs.munki.DisplayLinkManager</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>EPOS Connect</string>
+		<string>DisplayLink Manager</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/EPOS Connect</string>
+		<string>apps/DisplayLink Manager</string>
 		<key>MUNKI_CATEGORY</key>
-		<string>Utilities</string>
+		<string>Multimedia</string>
 		<key>pkginfo</key>
 		<dict>
-			<key>blocking_applications</key>
-			<array>
-				<string>EPOS Connect.app</string>
-			</array>
 			<key>catalogs</key>
 			<array>
 				<string>testing</string>
@@ -27,11 +23,13 @@
 			<key>category</key>
 			<string>%MUNKI_CATEGORY%</string>
 			<key>description</key>
-			<string>Keeps EPOS headsets and speakerphones updated and provides access to device settings and call control.</string>
+			<string>Enables DisplayLink docks, adapters and external displays on macOS.</string>
 			<key>developer</key>
-			<string>EPOS</string>
+			<string>DisplayLink</string>
 			<key>display_name</key>
-			<string>EPOS Connect</string>
+			<string>DisplayLink Manager</string>
+			<key>minimum_os_version</key>
+			<string>14.0</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -41,7 +39,7 @@
 	<key>MinimumVersion</key>
 	<string>2.4.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.JOSC-svs.download.EPOSConnect</string>
+	<string>com.github.JOSC-svs.download.DisplayLinkManager</string>
 	<key>Process</key>
 	<array>
 		<dict>
