@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Downloads the current release of DisplayLink Manager.</string>
+	<string>Downloads the current release of EPOS Connect.</string>
 	<key>Identifier</key>
-	<string>com.github.JOSC-svs.download.DisplayLinkManager</string>
+	<string>com.github.JOSC-svs.download.EPOSConnect</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>DisplayLink Manager</string>
+		<string>EPOS Connect</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.4.1</string>
@@ -19,9 +19,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://www.synaptics.com/products/displaylink-graphics/downloads/macos</string>
+				<string>https://shop.eposaudio.com/en/dk/software/epos-connect</string>
 				<key>re_pattern</key>
-				<string>(?s)&lt;div class="latest-official-drivers"&gt;.*?Release:\s*(?P&lt;version&gt;[0-9.]+).*?&lt;a href="(?P&lt;product_url&gt;/products/displaylink-manager-graphics-connectivity-[^"]+\?filetype=exe)"</string>
+				<string>https://www\.eposaudio\.com(?P&lt;download_path&gt;/globalassets/[^&quot;]+/epos-connect-[0-9.]+/eposconnect_(?P&lt;version&gt;[0-9.]+)\.pkg)</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -30,18 +30,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://www.synaptics.com%product_url%</string>
-				<key>re_pattern</key>
-				<string>&lt;a class="no-link" href="(?P&lt;download_url&gt;/sites/default/files/exe_files/[^"]+\.pkg)" download&gt;Accept&lt;/a&gt;</string>
-			</dict>
-			<key>Processor</key>
-			<string>URLTextSearcher</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>url</key>
-				<string>https://www.synaptics.com%download_url%</string>
+				<string>https://shop.eposaudio.com%download_path%</string>
 				<key>filename</key>
 				<string>%NAME%-%version%.pkg</string>
 			</dict>
@@ -59,7 +48,7 @@
 				<string>%pathname%</string>
 				<key>expected_authority_names</key>
 				<array>
-					<string>Developer ID Installer: DisplayLink Corp (73YQY62QM3)</string>
+					<string>Developer ID Installer: EPOS GROUP AS (8956A7Y69J)</string>
 					<string>Developer ID Certification Authority</string>
 					<string>Apple Root CA</string>
 				</array>
