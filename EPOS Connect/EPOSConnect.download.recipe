@@ -21,7 +21,7 @@
 				<key>url</key>
 				<string>https://shop.eposaudio.com/en/dk/software/epos-connect</string>
 				<key>re_pattern</key>
-				<string>https://www\.eposaudio\.com(?P&lt;download_path&gt;/globalassets/[^&quot;]+/epos-connect-[0-9.]+/eposconnect_(?P&lt;version&gt;[0-9.]+)\.pkg)</string>
+				<string>(?P&lt;download_url&gt;https://www\.eposaudio\.com/globalassets/[^&quot;]+/epos-connect-[0-9.]+/eposconnect_(?P&lt;version&gt;[0-9.]+)\.pkg)</string>
 			</dict>
 			<key>Processor</key>
 			<string>URLTextSearcher</string>
@@ -30,7 +30,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>https://shop.eposaudio.com%download_path%</string>
+				<string>%download_url%</string>
 				<key>filename</key>
 				<string>%NAME%-%version%.pkg</string>
 			</dict>
